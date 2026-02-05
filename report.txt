@@ -7,4 +7,4 @@
       5 GET
       1 POST
 
-Самый популярный URL:	 3 index.html
+Самый популярный URL:	 3 /index.html

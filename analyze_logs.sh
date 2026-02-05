@@ -16,6 +16,6 @@ echo -e "Количество уникальных IP-адресов:\t"$(awk '{
 echo -e "\nКоличество запросов по методам:" >> report.txt
 awk '{print $6}' access.log | sort | uniq -c | sed 's/"//' >> report.txt
 
-echo -e "\nСамый популярный URL:\t"$(awk '{print $7}' access.log | sed 's|/||' |sort | uniq -c | sort -r | head -1) >> report.txt
+echo -e "\nСамый популярный URL:\t"$(awk '{print $7}' access.log | sort | uniq -c | sort -r | head -1) >> report.txt
 
 echo "Отчет сохранен в файл report.txt"
