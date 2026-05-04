@@ -1,0 +1,15 @@
+object StringProcessor {
+  def processStrings(strings: List[String]): List[String] = {
+    // убрана изменяемая переменная result, больше нет промежуточного сохранения
+    // filter(_.length > 3) - вместо условия if (str.length > 3).
+    // map(_.toUpperCase) - вместо result :+ str.toUpperCase
+    // эти функции высшего порядка работают со всеми элементами списка, поэтому не нужен for
+    strings.filter(_.length > 3).map(_.toUpperCase) 
+  }
+
+  def main(args: Array[String]): Unit = {
+    val strings = List("apple", "cat", "banana", "dog", "elephant")
+    val processedStrings = processStrings(strings)
+    println(s"Processed strings: $processedStrings")
+  }
+}
